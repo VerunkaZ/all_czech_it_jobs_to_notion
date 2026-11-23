@@ -1,0 +1,15 @@
+{
+    "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+    "actorSpecification": 1,
+    "name": "all-czech-it-jobs-to-notion",
+    "title": "Czech IT & Data job collector to Notion",
+    "description": "Twice a day collects new IT and Data job offers from jobs.cz, profesia.cz, datatalk.cz and junior.guru and writes them to a Notion database.",
+    "version": "0.1",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "ts-crawlee-cheerio",
+        "generatedBy": "Claude"
+    },
+    "inputSchema": "./input_schema.json",
+    "dockerfile": "../Dockerfile"
+}

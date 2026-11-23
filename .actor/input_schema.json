@@ -1,0 +1,100 @@
+{
+    "$schema": "https://apify.com/schemas/v1/input.ide.json",
+    "title": "Czech IT & Data job collector to Notion",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "sources": {
+            "title": "Job boards",
+            "type": "array",
+            "description": "Which Czech job boards to crawl.",
+            "editor": "json",
+            "default": ["jobs.cz", "profesia.cz", "junior.guru", "datatalk.cz", "titans.cz", "join.titans.eu"],
+            "prefill": ["jobs.cz", "profesia.cz", "junior.guru", "datatalk.cz", "titans.cz", "join.titans.eu"]
+        },
+        "groupDataBi": {
+            "title": "Group: Data and BI",
+            "type": "boolean",
+            "description": "Data analyst, data engineer, BI, ETL, data science.",
+            "default": true
+        },
+        "groupBackendFrontend": {
+            "title": "Group: Backend and frontend",
+            "type": "boolean",
+            "description": "Backend, frontend, full stack, web and mobile developers.",
+            "default": false
+        },
+        "groupQaTesting": {
+            "title": "Group: QA and testing",
+            "type": "boolean",
+            "description": "QA engineer, test automation, tester.",
+            "default": false
+        },
+        "groupDevopsCloud": {
+            "title": "Group: DevOps and cloud",
+            "type": "boolean",
+            "description": "DevOps, cloud, AWS, Azure, Kubernetes, SRE, sysadmin.",
+            "default": false
+        },
+        "groupSecurity": {
+            "title": "Group: Security",
+            "type": "boolean",
+            "description": "Security engineer, SOC, penetration tester, cybersecurity.",
+            "default": false
+        },
+        "groupItSupport": {
+            "title": "Group: IT support",
+            "type": "boolean",
+            "description": "Helpdesk, service desk, technical and IT support.",
+            "default": false
+        },
+        "groupProjectProduct": {
+            "title": "Group: Project and product management",
+            "type": "boolean",
+            "description": "Project manager, product owner, scrum master, IT manager.",
+            "default": false
+        },
+        "groupSapErp": {
+            "title": "Group: SAP and ERP",
+            "type": "boolean",
+            "description": "SAP, ABAP, ERP, Oracle, Salesforce consultants.",
+            "default": false
+        },
+        "customKeywords": {
+            "title": "Custom keywords",
+            "type": "array",
+            "description": "Extra words to match in the job title. An offer passes if it matches any enabled group or any of these words.",
+            "editor": "stringList",
+            "default": []
+        },
+        "excludeKeywords": {
+            "title": "Exclude keywords",
+            "type": "array",
+            "description": "Your own words to drop offers by, e.g. 'senior' or 'praktikum'. Matched against the job title.",
+            "editor": "stringList",
+            "default": []
+        },
+        "maxItemsPerSource": {
+            "title": "Max items per source",
+            "type": "integer",
+            "description": "Upper limit of offers taken from each job board. Use a small number for test runs.",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 500
+        },
+        "notionToken": {
+            "title": "Notion integration token",
+            "type": "string",
+            "description": "Internal integration secret from notion.so/my-integrations. Stored as a secret in the Actor input.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "notionDatabaseId": {
+            "title": "Notion database ID",
+            "type": "string",
+            "description": "The 32-character ID from the database URL. The integration must be connected to this database.",
+            "editor": "textfield"
+        }
+    },
+    "required": []
+}
